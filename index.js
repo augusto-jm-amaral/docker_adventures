@@ -19,4 +19,6 @@ app.use((err, req, res, next) => {
     res.status(500).send({ error: 'Something failed!' })
 })
 
-app.listen('3000', () => console.log('App running on port 3000'))
+const runningMessage = `App running on port ${process.env.PORT}`
+
+app.listen(process.env.PORT, () => console.log(runningMessage))
